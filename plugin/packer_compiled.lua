@@ -74,6 +74,11 @@ _G.packer_plugins = {
     path = "/home/julian/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
   },
+  ["lightline.vim"] = {
+    loaded = true,
+    path = "/home/julian/.local/share/nvim/site/pack/packer/start/lightline.vim",
+    url = "https://github.com/itchyny/lightline.vim"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/julian/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
@@ -83,6 +88,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/julian/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
+  onehalf = {
+    loaded = true,
+    path = "/home/julian/.local/share/nvim/site/pack/packer/start/onehalf/vim/",
+    url = "https://github.com/sonph/onehalf"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -97,6 +107,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Runtimepath customization
+time([[Runtimepath customization]], true)
+vim.o.runtimepath = vim.o.runtimepath .. ",/home/julian/.local/share/nvim/site/pack/packer/start/onehalf/vim/"
+time([[Runtimepath customization]], false)
 if should_profile then save_profiles() end
 
 end)

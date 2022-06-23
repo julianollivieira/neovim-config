@@ -8,4 +8,6 @@ require('packer').startup(function()
 	}
 	use {'neoclide/coc.nvim', branch = 'release'}
 	use 'junegunn/rainbow_parentheses.vim'
+	use {'sonph/onehalf', rtp = 'vim'}
+	use 'itchyny/lightline.vim'
 end)
