@@ -10,4 +10,5 @@ require('packer').startup(function()
 	use 'junegunn/rainbow_parentheses.vim'
 	use {'sonph/onehalf', rtp = 'vim'}
 	use 'itchyny/lightline.vim'
+	use 'github/copilot.vim'
 end)

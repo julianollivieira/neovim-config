@@ -1,0 +1,5 @@
+{
+	"rust-analyzer.inlayHints.refreshOnInsertMode": true,
+	"rust-analyzer.updates.channel": "nightly",
+	"coc.preferences.formatOnSaveFiletypes": ["rust"]
+}
