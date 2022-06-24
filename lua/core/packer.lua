@@ -11,4 +11,5 @@ require('packer').startup(function()
 	use {'sonph/onehalf', rtp = 'vim'}
 	use 'itchyny/lightline.vim'
 	use 'github/copilot.vim'
+	use 'APZelos/blamer.nvim'
 end)
