@@ -12,4 +12,5 @@ require('packer').startup(function()
 	use 'itchyny/lightline.vim'
 	use 'github/copilot.vim'
 	use 'APZelos/blamer.nvim'
+	use {'akinsho/toggleterm.nvim', tag = 'v1.*'}
 end)
