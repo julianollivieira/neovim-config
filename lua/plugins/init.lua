@@ -1,4 +1,7 @@
 require("core.packer")
 require("plugins.configs.nvim-tree")
 require("plugins.configs.toggleterm")
+require("plugins.configs.onedarkpro")
+require("plugins.configs.nvim-treesitter")
+require("plugins.configs.indent-blankline")
 require("core.mappings")

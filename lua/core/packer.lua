@@ -7,10 +7,12 @@ require('packer').startup(function()
 		},
 	}
 	use {'neoclide/coc.nvim', branch = 'release'}
-	use 'junegunn/rainbow_parentheses.vim'
 	use {'sonph/onehalf', rtp = 'vim'}
+	use {'olimorris/onedarkpro.nvim'}
 	use 'itchyny/lightline.vim'
 	use 'github/copilot.vim'
 	use 'APZelos/blamer.nvim'
 	use {'akinsho/toggleterm.nvim', tag = 'v1.*'}
+	use {'nvim-treesitter/nvim-treesitter'}
+	use {'lukas-reineke/indent-blankline.nvim'}
 end)
