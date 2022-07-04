@@ -15,4 +15,10 @@ require('packer').startup(function()
 	use {'akinsho/toggleterm.nvim', tag = 'v1.*'}
 	use {'nvim-treesitter/nvim-treesitter'}
 	use {'lukas-reineke/indent-blankline.nvim'}
+	use {
+		'nvim-telescope/telescope.nvim',
+		requires = {
+			'nvim-lua/plenary.nvim',
+		},
+	}
 end)
