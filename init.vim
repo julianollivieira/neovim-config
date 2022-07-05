@@ -8,6 +8,9 @@ let g:blamer_relative_time = 1
 hi default CocRustTypeHint guifg=#3e4148
 hi CursorLine guibg=#2c313c
 hi CocErrorSign guifg=#FF6464 guibg=#382c32
+hi CocErrorLine guibg=#382c32
+hi CocHintSign guifg=#FA973A guibg=#403733
+hi CocHintLine guibg=#403733
 
 " Disable arrow keys to break the habit of using them instead of hjkl
 noremap <Up> <Nop>
