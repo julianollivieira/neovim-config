@@ -22,4 +22,5 @@ require('packer').startup(function()
 		},
 	}
 	use {'numToStr/Comment.nvim'}
+	use {'folke/todo-comments.nvim'}
 end)
