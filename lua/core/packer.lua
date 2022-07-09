@@ -21,4 +21,5 @@ require('packer').startup(function()
 			'nvim-lua/plenary.nvim',
 		},
 	}
+	use {'numToStr/Comment.nvim'}
 end)
