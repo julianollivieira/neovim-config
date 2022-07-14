@@ -23,4 +23,7 @@ require('packer').startup(function()
 	}
 	use {'numToStr/Comment.nvim'}
 	use {'folke/todo-comments.nvim'}
+	use {'romgrk/barbar.nvim'}
+	use {'https://gitlab.com/yorickpeterse/nvim-window.git'}
+	use {'psliwka/vim-smoothie'}
 end)
