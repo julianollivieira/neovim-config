@@ -26,4 +26,5 @@ require('packer').startup(function()
 	use {'romgrk/barbar.nvim'}
 	use {'https://gitlab.com/yorickpeterse/nvim-window.git'}
 	use {'psliwka/vim-smoothie'}
+	use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 end)

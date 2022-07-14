@@ -13,3 +13,7 @@ map("n", "<leader>fg", ":Telescope live_grep <CR>")
 map("n", "<leader>p", ":BufferPick <CR>")
 map("n", "<leader>c", ":BufferClose <CR>")
 map("n", "<leader>w", ":lua require('nvim-window').pick() <CR>")
+map("n", "<leader>gg", ":DiffviewOpen <CR>")
+map("n", "<leader>gc", ":DiffviewClose <CR>")
+map("n", "<leader>gt", ":DiffviewToggleFiles <CR>") -- TODO: Change this mapping in diffview plugin config
+map("n", "<leader>gr", ":DiffviewRefresh <CR>")
