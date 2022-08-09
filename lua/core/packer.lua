@@ -27,4 +27,5 @@ require('packer').startup(function()
 	use {'https://gitlab.com/yorickpeterse/nvim-window.git'}
 	use {'psliwka/vim-smoothie'}
 	use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+	use { 'windwp/nvim-autopairs' }
 end)
