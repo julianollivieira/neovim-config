@@ -28,4 +28,6 @@ require('packer').startup(function()
 	use {'psliwka/vim-smoothie'}
 	use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 	use { 'windwp/nvim-autopairs' }
+	use { 'crusj/structrue-go.nvim', branch = 'main' }
+	use { 'fannheyward/telescope-coc.nvim' }
 end)

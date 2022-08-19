@@ -19,6 +19,11 @@ map("n", "<C-k>", ":resize +5 <CR>")
 -- Telescope
 map("n", "<leader>ff", ":Telescope find_files hidden=true <CR>")
 map("n", "<leader>fg", ":Telescope live_grep <CR>")
+map("n", "<leader>fw", ":Telescope coc workspace_symbols<CR>")
+map("n", "<leader>fd", ":Telescope coc document_symbols<CR>")
+map("n", "<leader>fc", ":Telescope git_commits<CR>")
+map("n", "<leader>fb", ":Telescope git_branches<CR>")
+map("n", "<leader>fs", ":Telescope git_stash<CR>")
 
 -- Tabs
 map("n", "<leader>p", ":BufferPick <CR>")
