@@ -1,7 +1,0 @@
-{
-	"rust-analyzer.inlayHints.refreshOnInsertMode": true,
-	"rust-analyzer.updates.channel": "nightly",
-	"coc.preferences.formatOnSaveFiletypes": ["rust", "go", "typescriptreact", "typescript"],
-	"diagnostic.virtualText": true,
-	"diagnostic.virtualTextCurrentLineOnly": false
-}
