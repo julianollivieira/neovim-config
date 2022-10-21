@@ -18,11 +18,16 @@ require("nvim-treesitter.configs").setup({
 })
 
 -- Status line
-local error_from_hl = vim.api.nvim_get_hl_by_name("ErrorMsg", true)
-local warn_from_hl = vim.api.nvim_get_hl_by_name("WarningMsg", true)
+local error_from_hl = vim.api.nvim_get_hl_by_name("DiagnosticError", true)
+local warn_from_hl = vim.api.nvim_get_hl_by_name("DiagnosticWarn", true)
+local hint_from_hl = vim.api.nvim_get_hl_by_name("DiagnosticHint", true)
+local info_from_hl = vim.api.nvim_get_hl_by_name("DiagnosticInfo", true)
+
 local colors = {
 	error = string.format("%06x", error_from_hl.foreground),
-	warn = string.format("%06x", warn_from_hl.foreground)
+	warn = string.format("%06x", warn_from_hl.foreground),
+	hint = string.format("%06x", hint_from_hl.foreground),
+	info = string.format("%06x", info_from_hl.foreground)
 }
 
 vim.api.nvim_set_hl(0, 'DiffAdd', { fg = '#333333', bg = '#54ff71' })
@@ -38,7 +43,6 @@ require("lualine").setup({
 	sections = {
 		lualine_a = { 'mode' },
 		lualine_b = {
-			'branch',
 			{
 				'diff',
 				diff_color = {
@@ -48,23 +52,36 @@ require("lualine").setup({
 				},
 				symbols = {added = '+', modified = ' ~', removed = ' -'}, -- Changes the symbols used by the diff.
 			},
+			'branch'
+		},
+		lualine_c = { 'filename' },
+		lualine_x = {},
+		lualine_y = {
 			{
 				'diagnostics',
 				source = { 'nvim' },
 				sections = { 'error' },
-				diagnostics_color = { error = { bg = colors.error, fg = "#ffffff" } },
+				diagnostics_color = { error = { bg = colors.error, fg = "#333333" } },
 			},
 			{
 				'diagnostics',
 				source = { 'nvim' },
 				sections = { 'warn' },
-				diagnostics_color = { warn = { bg = colors.warn, fg = "#ffffff" } },
+				diagnostics_color = { warn = { bg = colors.warn, fg = "#333333" } },
 			},
-			-- TODO: add info/hints?
+			{
+				'diagnostics',
+				source = { 'nvim' },
+				sections = { 'hint' },
+				diagnostics_color = { hint = { bg = colors.hint, fg = "#333333" } },
+			},
+			{
+				'diagnostics',
+				source = { 'nvim' },
+				sections = { 'info' },
+				diagnostics_color = { info = { bg = colors.info, fg = "#333333" } },
+			},
 		},
-		lualine_c = { 'filename' },
-		lualine_x = {},
-		lualine_y = {},
 		lualine_z = { 'location' }
 	}
 })
