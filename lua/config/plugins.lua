@@ -1,5 +1,6 @@
 require("nvim-window").setup({})		-- Easy window jumping
 require('nvim-autopairs').setup({})		-- Autopairs
+require('Comment').setup()				-- Commenting
 
 -- Telescope
 require("telescope").setup({

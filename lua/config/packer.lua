@@ -17,4 +17,5 @@ require('packer').startup(function()
 	use 'windwp/nvim-ts-autotag'										-- Use treesitter to autoclose and autorename html tag
 	use 'windwp/nvim-autopairs'											-- Autopairs
 	use 'norcalli/nvim-colorizer.lua'									-- Show colors
+	use 'numToStr/Comment.nvim'											-- Commenting
 end)
