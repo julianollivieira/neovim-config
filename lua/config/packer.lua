@@ -6,7 +6,7 @@ require('packer').startup(function()
 	use  "nvim-telescope/telescope-file-browser.nvim"			 		-- File browsing
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }		-- Syntax highlighting
 	use 'nvim-treesitter/nvim-treesitter-context'						-- Context line
- 	use { 'shaunsingh/oxocarbon.nvim', run = './install.sh' }			-- Color scheme
+	use { 'shaunsingh/oxocarbon.nvim', run = './install.sh' }			-- Color scheme
 	use "EdenEast/nightfox.nvim"										-- Color scheme
 	use 'https://gitlab.com/yorickpeterse/nvim-window.git'				-- Easy window switching
 	use 'nvim-lualine/lualine.nvim'										-- Status line
@@ -18,4 +18,8 @@ require('packer').startup(function()
 	use 'windwp/nvim-autopairs'											-- Autopairs
 	use 'norcalli/nvim-colorizer.lua'									-- Show colors
 	use 'numToStr/Comment.nvim'											-- Commenting
+	use 'simrat39/rust-tools.nvim'										-- Rust LSP setup
+	use 'voldikss/vim-floaterm'											-- Terminal
+	use 'folke/todo-comments.nvim'										-- Highlight TODO comments
+	use 'RRethy/vim-illuminate'										-- Highlight other uses of the word under the cursor
 end)

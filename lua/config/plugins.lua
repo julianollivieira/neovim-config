@@ -1,6 +1,7 @@
 require("nvim-window").setup({})		-- Easy window jumping
 require('nvim-autopairs').setup({})		-- Autopairs
 require('Comment').setup()				-- Commenting
+require('todo-comments').setup({})		-- Highlight TODO comments
 
 -- Telescope
 require("telescope").setup({
@@ -10,12 +11,22 @@ require("telescope").setup({
 })
 require("telescope").load_extension("file_browser")
 
--- Treesitter (and autotag)
+-- Treesitter + autotag
 require("nvim-treesitter.configs").setup({
 	ensure_installed = { "lua", "php", "rust", "javascript", "html", "phpdoc" },
 	highlight = { enable = true },
 	indent = { enable = true },
-	autotag = { enable = true },
+	autotag = { enable = true }
+})
+
+-- Illuminate
+require('illuminate').configure({
+	provider = {
+		'lsp',
+		'treesitter',
+		'regex',
+	},
+	delay = 0
 })
 
 -- Status line
