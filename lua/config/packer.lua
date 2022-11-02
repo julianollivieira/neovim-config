@@ -21,5 +21,6 @@ require('packer').startup(function()
 	use 'simrat39/rust-tools.nvim'										-- Rust LSP setup
 	use 'voldikss/vim-floaterm'											-- Terminal
 	use 'folke/todo-comments.nvim'										-- Highlight TODO comments
-	use 'RRethy/vim-illuminate'										-- Highlight other uses of the word under the cursor
+	use 'RRethy/vim-illuminate'											-- Highlight other uses of the word under the cursor
+	use 'jose-elias-alvarez/null-ls.nvim'								-- Null LS
 end)

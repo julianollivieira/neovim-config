@@ -15,10 +15,18 @@ require("config.plugins")
 require("config.lsp")
 
 -- Configure folding with Treesitter
-vim.cmd.set "foldmethod=expr"
-vim.cmd.set "foldexpr=nvim_treesitter#foldexpr()"
+-- vim.cmd.set "foldmethod=expr"
+-- vim.cmd.set "foldexpr=nvim_treesitter#foldexpr()"
 -- vim.cmd.set "nofoldenable"
-vim.api.nvim_command "autocmd BufWinEnter * silent! :%foldopen!"
+-- vim.api.nvim_command "autocmd BufWinEnter * silent! :%foldopen!"
+
+-- Appropriately highlight codefences returned from denols
+vim.g.markdown_fenced_languages = {
+  "ts=typescript"
+}
 
 -- Start COQ for autocompletion
 vim.api.nvim_command ":COQnow --shut-up"
+
+-- Format on save
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]

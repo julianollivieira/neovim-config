@@ -2,7 +2,8 @@ local lsp = require("lspconfig")
 local coq = require("coq")
 local rt = require("rust-tools")
 
-lsp.tsserver.setup(coq.lsp_ensure_capabilities({}))			-- JavaScript/TypeScript
+-- Setup TSServer for JavaScript/TypeScript
+lsp.tsserver.setup(coq.lsp_ensure_capabilities({}))
 
 -- Setup Psalm for PHP static analysis
 lsp.psalm.setup(coq.lsp_ensure_capabilities({
