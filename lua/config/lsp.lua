@@ -3,42 +3,47 @@ local coq = require("coq")
 local rt = require("rust-tools")
 
 -- Setup TSServer for JavaScript/TypeScript
-lsp.tsserver.setup(coq.lsp_ensure_capabilities({}))
+lsp.tsserver.setup(coq.lsp_ensure_capabilities({
+	on_attach = function(client)
+		client.server_capabilities.documentFormattingProvider = false
+		client.server_capabilities.documentRangeFormattingProvider = false
+	end,
+}))
 
 -- Setup Psalm for PHP static analysis
 lsp.psalm.setup(coq.lsp_ensure_capabilities({
 	settings = {
 		psalm = {
 			disableAutoComplete = true,
-		}
-	}
+		},
+	},
 }))
 
 -- Setup Intelephense for PHP auto-completion
 lsp.intelephense.setup(coq.lsp_ensure_capabilities({
-  settings = {
-    intelephense = {
-      diagnostic = {
-        enable = false,
-        typeErrors = false,
-        duplicateSymbols = false,
-        argumentCount = false,
-      }
-    }
-  }
+	settings = {
+		intelephense = {
+			diagnostic = {
+				enable = false,
+				typeErrors = false,
+				duplicateSymbols = false,
+				argumentCount = false,
+			},
+		},
+	},
 }))
 
 -- Setup rust-analyzer using rust-tools
 rt.setup({
 	server = {
 		on_attach = function(client, bufnr)
-			vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })			-- Hover actions
-			vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })	-- Code action groups
+			vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr }) -- Hover actions
+			vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr }) -- Code action groups
 			if client.server_capabilities.documentFormattingProvider then
-				vim.cmd [[augroup Format]]
-				vim.cmd [[autocmd! * <buffer>]]
-				vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting()]]
-				vim.cmd [[augroup END]]
+				vim.cmd([[augroup Format]])
+				vim.cmd([[autocmd! * <buffer>]])
+				vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting()]])
+				vim.cmd([[augroup END]])
 			end
 		end,
 	},
@@ -50,11 +55,11 @@ lsp.sumneko_lua.setup(coq.lsp_ensure_capabilities({
 		Lua = {
 			runtime = {
 				-- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-				version = 'LuaJIT',
+				version = "LuaJIT",
 			},
 			diagnostics = {
 				-- Get the language server to recognize the `vim` global
-				globals = {'vim'},
+				globals = { "vim" },
 			},
 			workspace = {
 				-- Make the server aware of Neovim runtime files
